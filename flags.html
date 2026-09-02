@@ -134,12 +134,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="39" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 38;"><span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`</span></span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="vs">&lt;div style="margin-top: 1.5rem;"&gt;</span></span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;h3&gt;</span><span class="sc">${</span>selectedCountry<span class="op">.</span><span class="at">name</span><span class="sc">}</span><span class="vs">&lt;/h3&gt;</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="vs">&lt;div style="max-width: 450px; padding: 1.25rem; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); margin-top: 1rem; margin-bottom: 2rem;"&gt;</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;h3 style="margin-top: 0; margin-bottom: 0.75rem; color: #1f2937;"&gt;</span><span class="sc">${</span>selectedCountry<span class="op">.</span><span class="at">name</span><span class="sc">}</span><span class="vs">&lt;/h3&gt;</span></span>
 <span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;img </span></span>
 <span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="vs">    src="data/</span><span class="sc">${</span>selectedCountry<span class="op">.</span><span class="at">code</span><span class="sc">}</span><span class="vs">.png" </span></span>
 <span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="vs">    alt="Flag of </span><span class="sc">${</span>selectedCountry<span class="op">.</span><span class="at">name</span><span class="sc">}</span><span class="vs">" </span></span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="vs">    style="max-width: 400px; width: 100%; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="vs">    style="width: 100%; max-height: 250px; object-fit: contain; border: 1px solid #e5e7eb; border-radius: 4px; background: #f8fafc;"</span></span>
 <span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="vs">  /&gt;</span></span>
 <span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="vs">&lt;/div&gt;</span></span>
 <span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="vs">`</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -149,11 +149,137 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<section id="flag-families-patterns" class="level2">
+<h2 class="anchored" data-anchor-id="flag-families-patterns">Flag Families &amp; Patterns</h2>
+<style>
+.flag-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1.25rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.flag-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  color: #1e293b;
+}
+.flag-card p.similarity {
+  font-size: 0.9rem;
+  color: #475569;
+  min-height: 50px;
+  margin-bottom: 1rem;
+}
+.flag-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.flag-item {
+  padding: 0.4rem 0.6rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+}
+.flag-item p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+.flag-item img {
+  width: 48px;
+  height: 32px;
+  object-fit: cover;
+  border: 1px solid #cbd5e1;
+  border-radius: 3px;
+  flex-shrink: 0;
+  margin: 0;
+}
+.flag-name {
+  font-weight: 500;
+  color: #1e293b;
+}
+</style>
+<div class="grid">
+<section id="nordic-cross" class="level3 g-col-12 g-col-md-4 flag-card">
+<h3 class="anchored" data-anchor-id="nordic-cross">1. Nordic Cross</h3>
+<p class="similarity">
+<strong>Similarity:</strong> Off-center cross design representing shared Nordic history and Christian heritage.
+</p>
+<div class="flag-list">
+<div class="flag-item">
+<p><img src="data/dk.png" class="img-fluid"> <span class="flag-name">Denmark</span></p>
+</div>
+<div class="flag-item">
+<p><img src="data/se.png" class="img-fluid"> <span class="flag-name">Sweden</span></p>
+</div>
+<div class="flag-item">
+<p><img src="data/no.png" class="img-fluid"> <span class="flag-name">Norway</span></p>
+</div>
+<div class="flag-item">
+<p><img src="data/fi.png" class="img-fluid"> <span class="flag-name">Finland</span></p>
+</div>
+<div class="flag-item">
+<p><img src="data/is.png" class="img-fluid"> <span class="flag-name">Iceland</span></p>
+</div>
+</div>
+</section>
+<section id="pan-african-colors" class="level3 g-col-12 g-col-md-4 flag-card">
+<h3 class="anchored" data-anchor-id="pan-african-colors">2. Pan-African Colors</h3>
+<p class="similarity">
+<strong>Similarity:</strong> Red, yellow, and green color palette symbolizing African solidarity and independence.
+</p>
+<div class="flag-list">
+<div class="flag-item">
+<p><img src="data/gh.png" class="img-fluid"> <span class="flag-name">Ghana</span></p>
+</div>
+<div class="flag-item">
+<p><img src="data/sn.png" class="img-fluid"> <span class="flag-name">Senegal</span></p>
+</div>
+<div class="flag-item">
+<p><img src="data/ml.png" class="img-fluid"> <span class="flag-name">Mali</span></p>
+</div>
+<div class="flag-item">
+<p><img src="data/gn.png" class="img-fluid"> <span class="flag-name">Guinea</span></p>
+</div>
+<div class="flag-item">
+<p><img src="data/cm.png" class="img-fluid"> <span class="flag-name">Cameroon</span></p>
+</div>
+</div>
+</section>
+<section id="pan-slavic-tricolors" class="level3 g-col-12 g-col-md-4 flag-card">
+<h3 class="anchored" data-anchor-id="pan-slavic-tricolors">3. Pan-Slavic Tricolors</h3>
+<p class="similarity">
+<strong>Similarity:</strong> Horizontal tricolor stripes in white, blue, and red derived from shared Slavic heritage.
+</p>
+<div class="flag-list">
+<div class="flag-item">
+<p><img src="data/ru.png" class="img-fluid"> <span class="flag-name">Russia</span></p>
+</div>
+<div class="flag-item">
+<p><img src="data/sk.png" class="img-fluid"> <span class="flag-name">Slovakia</span></p>
+</div>
+<div class="flag-item">
+<p><img src="data/si.png" class="img-fluid"> <span class="flag-name">Slovenia</span></p>
+</div>
+<div class="flag-item">
+<p><img src="data/rs.png" class="img-fluid"> <span class="flag-name">Serbia</span></p>
+</div>
+<div class="flag-item">
+<p><img src="data/hr.png" class="img-fluid"> <span class="flag-name">Croatia</span></p>
+</div>
+</div>
+</section>
+</div>
+</section>
 
 </main>
 <!-- /main column -->
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImZsYWdzID0gdHJhbnNwb3NlKGZsYWdzX3Jhdylcblxudmlld29mIHNlbGVjdGVkQ291bnRyeSA9IElucHV0cy5zZWxlY3QoZmxhZ3MsIHtcbiAgbGFiZWw6IFwiU2VsZWN0IGEgQ291bnRyeTpcIixcbiAgZm9ybWF0OiBkID0+IGQubmFtZSxcbiAgdmFsdWU6IGZsYWdzLmZpbmQoZCA9PiBkLm5hbWUgPT09IFwiVW5pdGVkIFN0YXRlc1wiKVxufSlcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Imh0bWxgXG48ZGl2IHN0eWxlPVwibWFyZ2luLXRvcDogMS41cmVtO1wiPlxuICA8aDM+JHtzZWxlY3RlZENvdW50cnkubmFtZX08L2gzPlxuICA8aW1nIFxuICAgIHNyYz1cImRhdGEvJHtzZWxlY3RlZENvdW50cnkuY29kZX0ucG5nXCIgXG4gICAgYWx0PVwiRmxhZyBvZiAke3NlbGVjdGVkQ291bnRyeS5uYW1lfVwiIFxuICAgIHN0eWxlPVwibWF4LXdpZHRoOiA0MDBweDsgd2lkdGg6IDEwMCU7IGJvcmRlcjogMXB4IHNvbGlkICNkZGQ7IGJvcmRlci1yYWRpdXM6IDRweDsgYm94LXNoYWRvdzogMCA0cHggNnB4IHJnYmEoMCwwLDAsMC4xKTtcIlxuICAvPlxuPC9kaXY+XG5gXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3NlbGVjdGVkQ291bnRyeScpIn1dfQ==
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImZsYWdzID0gdHJhbnNwb3NlKGZsYWdzX3Jhdylcblxudmlld29mIHNlbGVjdGVkQ291bnRyeSA9IElucHV0cy5zZWxlY3QoZmxhZ3MsIHtcbiAgbGFiZWw6IFwiU2VsZWN0IGEgQ291bnRyeTpcIixcbiAgZm9ybWF0OiBkID0+IGQubmFtZSxcbiAgdmFsdWU6IGZsYWdzLmZpbmQoZCA9PiBkLm5hbWUgPT09IFwiVW5pdGVkIFN0YXRlc1wiKVxufSlcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Imh0bWxgXG48ZGl2IHN0eWxlPVwibWF4LXdpZHRoOiA0NTBweDsgcGFkZGluZzogMS4yNXJlbTsgYmFja2dyb3VuZDogI2ZmZmZmZjsgYm9yZGVyOiAxcHggc29saWQgI2U1ZTdlYjsgYm9yZGVyLXJhZGl1czogOHB4OyBib3gtc2hhZG93OiAwIDFweCAzcHggcmdiYSgwLDAsMCwwLjA4KTsgbWFyZ2luLXRvcDogMXJlbTsgbWFyZ2luLWJvdHRvbTogMnJlbTtcIj5cbiAgPGgzIHN0eWxlPVwibWFyZ2luLXRvcDogMDsgbWFyZ2luLWJvdHRvbTogMC43NXJlbTsgY29sb3I6ICMxZjI5Mzc7XCI+JHtzZWxlY3RlZENvdW50cnkubmFtZX08L2gzPlxuICA8aW1nIFxuICAgIHNyYz1cImRhdGEvJHtzZWxlY3RlZENvdW50cnkuY29kZX0ucG5nXCIgXG4gICAgYWx0PVwiRmxhZyBvZiAke3NlbGVjdGVkQ291bnRyeS5uYW1lfVwiIFxuICAgIHN0eWxlPVwid2lkdGg6IDEwMCU7IG1heC1oZWlnaHQ6IDI1MHB4OyBvYmplY3QtZml0OiBjb250YWluOyBib3JkZXI6IDFweCBzb2xpZCAjZTVlN2ViOyBib3JkZXItcmFkaXVzOiA0cHg7IGJhY2tncm91bmQ6ICNmOGZhZmM7XCJcbiAgLz5cbjwvZGl2PlxuYFxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdzZWxlY3RlZENvdW50cnknKSJ9XX0=
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
