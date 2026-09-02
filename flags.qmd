@@ -1,0 +1,50 @@
+---
+title: "World Flags Explorer"
+format: html
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r}
+library(tidyverse)
+library(countrycode)
+
+# List available flag images from data directory
+flag_files <- list.files("data", pattern = "\\.png$")
+flag_codes <- tools::file_path_sans_ext(flag_files)
+
+# Create a mapping of code to country name
+flags_df <- tibble(
+  code = flag_codes,
+  name = countrycode(toupper(flag_codes), origin = "iso2c", destination = "country.name")
+) |>
+  mutate(name = coalesce(name, toupper(code))) |>
+  arrange(name)
+
+ojs_define(flags_raw = flags_df)
+```
+
+```{ojs}
+flags = transpose(flags_raw)
+
+viewof selectedCountry = Inputs.select(flags, {
+  label: "Select a Country:",
+  format: d => d.name,
+  value: flags.find(d => d.name === "United States")
+})
+```
+
+```{ojs}
+html`
+<div style="margin-top: 1.5rem;">
+  <h3>${selectedCountry.name}</h3>
+  <img 
+    src="data/${selectedCountry.code}.png" 
+    alt="Flag of ${selectedCountry.name}" 
+    style="max-width: 400px; width: 100%; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"
+  />
+</div>
+`
+```
